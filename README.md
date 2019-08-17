@@ -2,7 +2,7 @@ Project TASQ: Testy, ankiety, sprawdziany i Quizy
 
 Java Proj.Grp.
 Czas:	35h
-Skład: G, Paweł, Katja
+Skład: Grzesiek, Paweł, Katja
 Stack technologiczny:
 1#JDK 8
 2#Spring boot (web starter)
