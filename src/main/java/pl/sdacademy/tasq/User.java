@@ -2,10 +2,7 @@ package pl.sdacademy.tasq;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 /*5. Użytkownik
@@ -14,7 +11,7 @@ import java.util.List;
 - nazwisko
 - lista testów (fk)
 */
-
+@Entity(name="User")
 public class User {
 
     @Id

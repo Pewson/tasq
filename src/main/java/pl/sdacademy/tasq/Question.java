@@ -10,10 +10,10 @@ import java.util.List;
 public class Question {
 
     @Id
-    @GeneratedValue(generator = “UUID”)
+    @GeneratedValue(generator = "UUID")
     @GenericGenerator(
-            name = “UUID”,
-            strategy = “org.hibernate.id.UUIDGenerator”,
+            name = "UUID",
+            strategy = "org.hibernate.id.UUIDGenerator"
     )
     private Integer id;
 

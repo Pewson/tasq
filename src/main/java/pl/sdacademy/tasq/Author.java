@@ -9,12 +9,9 @@ package pl.sdacademy.tasq;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
-
+@Entity(name="Author")
 public class Author {
 
     @Id
