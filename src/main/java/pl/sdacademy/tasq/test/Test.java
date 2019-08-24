@@ -22,9 +22,6 @@ public class Test {
     @Column(name="title")
     private String title;
 
-    @Column(name="idAuth")
-    private Integer idAuth;
-
     @ManyToOne(fetch=FetchType.EAGER)
     private Author author;
 
@@ -51,14 +48,6 @@ public class Test {
         this.title = title;
     }
 
-    public Integer getIdAuth() {
-        return idAuth;
-    }
-
-    public void setIdAuth(Integer idAuth) {
-        this.idAuth = idAuth;
-    }
-
     public Author getAuthor() {
         return author;
     }
@@ -83,51 +72,4 @@ public class Test {
         this.type = type;
     }
 
-    /* public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Integer getIdAuth() {
-        return idAuth;
-    }
-
-    public void setIdAuth(Integer idAuth) {
-        this.idAuth = idAuth;
-    }
-
-    public author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(author author) {
-        this.author = author;
-    }
-
-    public List<question> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<question> questions) {
-        this.questions = questions;
-    }
-
-    public DocType getType() {
-        return type;
-    }
-
-    public void setType(DocType type) {
-        this.type = type;
-    }*/
 }
