@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController("/question")
 public class QuestionController {
 
     private final QuestionService questionService;
@@ -19,7 +18,7 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    @PostMapping
+    @PostMapping("/question")
     public void add (@RequestBody Question question){
         questionService.addQuestion(question);
     }
