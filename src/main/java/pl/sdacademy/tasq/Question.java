@@ -15,7 +15,7 @@ public class Question {
             name = "UUID",
             strategy = "org.hibernate.id.UUIDGenerator"
     )
-    private Integer id;
+    private String id;
 
     @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "id")
@@ -31,11 +31,11 @@ public class Question {
     private List<Answer> listOfAnswers;
     //private Answer answer;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
