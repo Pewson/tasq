@@ -1,6 +1,9 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.results;
 
 import org.hibernate.annotations.GenericGenerator;
+import pl.sdacademy.tasq.test.Test;
+import pl.sdacademy.tasq.user.User;
+import pl.sdacademy.tasq.user.UserAnswer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

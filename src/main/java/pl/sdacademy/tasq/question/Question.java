@@ -1,6 +1,8 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.question;
 
 import org.hibernate.annotations.GenericGenerator;
+import pl.sdacademy.tasq.answer.Answer;
+import pl.sdacademy.tasq.test.Test;
 
 import javax.persistence.*;
 import java.util.List;
@@ -29,7 +31,7 @@ public class Question {
 
     @OneToMany(fetch=FetchType.EAGER)
     private List<Answer> listOfAnswers;
-    //private Answer answer;
+    //private answer answer;
 
     public String getId() {
         return id;

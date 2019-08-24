@@ -1,6 +1,9 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.test;
 
 import org.hibernate.annotations.GenericGenerator;
+import pl.sdacademy.tasq.DocType;
+import pl.sdacademy.tasq.author.Author;
+import pl.sdacademy.tasq.question.Question;
 
 import javax.persistence.*;
 import java.util.List;
@@ -104,19 +107,19 @@ public class Test {
         this.idAuth = idAuth;
     }
 
-    public Author getAuthor() {
+    public author getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(author author) {
         this.author = author;
     }
 
-    public List<Question> getQuestions() {
+    public List<question> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(List<Question> questions) {
+    public void setQuestions(List<question> questions) {
         this.questions = questions;
     }
 

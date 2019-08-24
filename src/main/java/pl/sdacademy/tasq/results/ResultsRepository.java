@@ -1,10 +1,10 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.results;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TestsRepository extends CrudRepository<Test, String> {
+public interface ResultsRepository extends CrudRepository<Results, String> {
 
     // #TODO extends with findBy*** Queries
 }

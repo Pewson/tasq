@@ -1,4 +1,4 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.user;
 
 //        - id (uuid) (pk)
 //        - timestamp
@@ -6,6 +6,7 @@ package pl.sdacademy.tasq;
 //        - id_użytkownika (Użytkownik) (fk)
 
 import org.hibernate.annotations.GenericGenerator;
+import pl.sdacademy.tasq.answer.Answer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

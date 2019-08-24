@@ -1,4 +1,4 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.question;
 
 import org.springframework.data.repository.CrudRepository;
 

@@ -1,4 +1,4 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.author;
 
 /*6. Autor
 - id (uuid) (pk)
@@ -8,6 +8,7 @@ package pl.sdacademy.tasq;
 */
 
 import org.hibernate.annotations.GenericGenerator;
+import pl.sdacademy.tasq.test.Test;
 
 import javax.persistence.*;
 import java.util.List;

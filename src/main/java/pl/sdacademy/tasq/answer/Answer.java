@@ -1,4 +1,4 @@
-package pl.sdacademy.tasq;
+package pl.sdacademy.tasq.answer;
 
 //        - id (uuid) (pk)
 //        - treść
@@ -7,6 +7,7 @@ package pl.sdacademy.tasq;
 
 
 import org.hibernate.annotations.GenericGenerator;
+import pl.sdacademy.tasq.question.Question;
 
 import javax.persistence.*;
 
