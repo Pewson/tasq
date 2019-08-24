@@ -20,7 +20,7 @@ public class Question {
     private String id;
 
     @ManyToOne(fetch=FetchType.EAGER)
-    @JoinColumn(name = "id")
+    //@JoinColumn(name = "id")
     private Test test;
 
     @Column(name="text")
@@ -29,7 +29,7 @@ public class Question {
     @Column(name="points")
     private Integer points;
 
-    @OneToMany(fetch=FetchType.EAGER)
+    @OneToMany(fetch=FetchType.LAZY)
     private List<Answer> listOfAnswers;
     //private answer answer;
 

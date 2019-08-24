@@ -4,7 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import pl.sdacademy.tasq.DocType;
 
+import javax.validation.Valid;
+import javax.xml.ws.Response;
 import java.util.List;
 
 public class TestController {
@@ -21,35 +24,38 @@ public class TestController {
 
         @PostMapping
         @ResponseStatus(HttpStatus.CREATED)
-        public ResponseEntity<Test> createTest(@Valid @RequestBody Test newTest) {
-            ResponseEntity<Test> answer = testService.newTest(newTest);
-            return answer;
+        public void saveTest(@Valid @RequestBody Test newTest) {
+            //ResponseEntity<Test>
+            //Test nt =
+            testService.saveTest( newTest);
+            //return new ResponseEntity<>(nt,HttpStatus.ACCEPTED);
         }
 
         @DeleteMapping
         @ResponseStatus(HttpStatus.PROCESSING)
-        public ResponseEntity<Test> deleteTest(@PathVariable String testId )
+        public void deleteTest(@PathVariable String testId )
         {
-            ResponseEntity<Test> answer = testService.deleteTest( testId );
-            return answer;
+            testService.deleteById( testId );
         }
-        @PostMapping("/update/{testID}")
+        @PutMapping("/update/{testID}")
         @ResponseStatus(HttpStatus.PROCESSING)
-        public ResponseEntity<Test> updateTest(String testId, String type, String name)
+        public void updateTest(String testId, String name, DocType type)
         {
-            ResponseEntity<Test> answer = testService.updateTitleAndType( testId, name, type );
-            return answer;
+            //ResponseEntity<Test> answer =
+           testService.updateTitleAndType( testId, name, type );
+            //return answer;
         }
         @GetMapping("/search/{query}")
-        public ResponseEntity<List<Test>> search(@PathVariable String query )
-        {
-            List<Test> lst = testService.findByTitle(query);
-            return new ResponseEntity<List<Test>>(lst, HttpStatus.FOUND );
+        public Test search(@PathVariable String query )
+        {   //ResponseEntity<List
+            //List<Test> lst =
+            return testService.findByTitle(query);
+            //return new ResponseEntity<List<Test>>(lst, HttpStatus.FOUND );
         }
 
         @GetMapping("search/all")
         public ResponseEntity<List<Test>> findAll(@PathVariable String query) {
-            List<Test> lst = testService.findAll(query);
+            List<Test> lst = testService.findAll();
             return new ResponseEntity<List<Test>>(lst, HttpStatus.FOUND );
         }
 

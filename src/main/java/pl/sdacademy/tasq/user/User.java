@@ -26,7 +26,7 @@ public class User {
     private  String name;
     private  String lastName;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany //(fetch = FetchType.LAZY)
     private List<Test> tests;
 
     public List<Test> getTests() {

@@ -26,7 +26,7 @@ public class Author {
     private  String lastName;
 
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Test> tests;
 
     public String getId() {
