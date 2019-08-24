@@ -9,12 +9,9 @@ import pl.sdacademy.tasq.DocType;
 import javax.validation.Valid;
 import javax.xml.ws.Response;
 import java.util.List;
-
+@RestController
+@RequestMapping("/tests")
 public class TestController {
-
-    @RestController
-    @RequestMapping("/tests")
-    public class RegistrationController {
         private TestService testService;
 
         @Autowired
@@ -22,7 +19,7 @@ public class TestController {
             this.testService = testService;
         }
 
-        @PostMapping
+        @PostMapping("/saveTest")
         @ResponseStatus(HttpStatus.CREATED)
         public void saveTest(@Valid @RequestBody Test newTest) {
             //ResponseEntity<Test>
@@ -31,13 +28,13 @@ public class TestController {
             //return new ResponseEntity<>(nt,HttpStatus.ACCEPTED);
         }
 
-        @DeleteMapping
+        @DeleteMapping("/delete/{testId}")
         @ResponseStatus(HttpStatus.PROCESSING)
         public void deleteTest(@PathVariable String testId )
         {
             testService.deleteById( testId );
         }
-        @PutMapping("/update/{testID}")
+        @PutMapping("/update/{testId}")
         @ResponseStatus(HttpStatus.PROCESSING)
         public void updateTest(String testId, String name, DocType type)
         {
@@ -45,19 +42,18 @@ public class TestController {
            testService.updateTitleAndType( testId, name, type );
             //return answer;
         }
-        @GetMapping("/search/{query}")
-        public Test search(@PathVariable String query )
+        @GetMapping("/search/byTitle/{title}")
+        public Test search(@PathVariable String title )
         {   //ResponseEntity<List
             //List<Test> lst =
-            return testService.findByTitle(query);
+            return testService.findByTitle(title);
             //return new ResponseEntity<List<Test>>(lst, HttpStatus.FOUND );
         }
 
-        @GetMapping("search/all")
-        public ResponseEntity<List<Test>> findAll(@PathVariable String query) {
+        @GetMapping("/search/all")
+        public ResponseEntity<List<Test>> findAll() {
             List<Test> lst = testService.findAll();
             return new ResponseEntity<List<Test>>(lst, HttpStatus.FOUND );
         }
 
     }
-}
