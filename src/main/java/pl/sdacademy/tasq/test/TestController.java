@@ -43,7 +43,7 @@ public class TestController {
             //return answer;
         }
         @GetMapping("/search/byTitle/{title}")
-        public Test search(@PathVariable String title )
+        public Test searchByTitle(@PathVariable String title )
         {   //ResponseEntity<List
             //List<Test> lst =
             return testService.findByTitle(title);

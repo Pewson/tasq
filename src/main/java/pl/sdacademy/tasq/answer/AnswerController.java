@@ -17,8 +17,8 @@ public class AnswerController {
         this.answerService = answerService;
     }
 
-    @PostMapping
-    public  void add (@RequestBody Answer answer){
+    @PostMapping("/saveAnswer")
+    public  void saveAnswer (@RequestBody Answer answer){
         answerService.addAnswer(answer);
     }
 

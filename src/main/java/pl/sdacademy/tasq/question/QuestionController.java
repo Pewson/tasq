@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-
+@RestController("/question")
 public class QuestionController {
 
     private final QuestionService questionService;
@@ -18,17 +18,17 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    @PostMapping("/question")
-    public void add (@RequestBody Question question){
+    @PostMapping("/saveQuestion")
+    public void saveQuestion (@RequestBody Question question){
         questionService.addQuestion(question);
     }
 
-    @GetMapping("/AllQuestions")
+    @GetMapping("/search/all")
     public List<Question> getAllQuestions(){
         return questionService.findAll();
     }
 
-    @GetMapping("/question/{id}")
+    @GetMapping("/search/byId/{id}")
     public Question getById(String id){
         return questionService.findById(id);
     }
