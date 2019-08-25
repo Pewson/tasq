@@ -23,4 +23,13 @@ public class AnswerController {
     }
 
 
+
+
+//    {
+//        "content": "odpowiedz1",
+//            "correct": true,
+//            "question": {
+//        "id": "5263f882-0183-4a1a-8cb1-dd43af20c0a1"
+//       }
+//    }
 }

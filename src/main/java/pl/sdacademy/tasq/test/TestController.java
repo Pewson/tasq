@@ -21,10 +21,10 @@ public class TestController {
 
         @PostMapping("/saveTest")
         @ResponseStatus(HttpStatus.CREATED)
-        public void saveTest(@Valid @RequestBody Test newTest) {
+        public Test saveTest(@Valid @RequestBody Test newTest) {
             //ResponseEntity<Test>
             //Test nt =
-            testService.saveTest( newTest);
+            return testService.saveTest( newTest);
             //return new ResponseEntity<>(nt,HttpStatus.ACCEPTED);
         }
 

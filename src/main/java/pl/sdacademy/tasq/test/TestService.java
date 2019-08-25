@@ -17,8 +17,8 @@ public class TestService {
     @Autowired
     TestsRepository testsRepository;
 
-    public void saveTest(Test test){
-        testsRepository.save(test);
+    public Test saveTest(Test test){
+        return testsRepository.save(test);
     }
 
     public List<Test> findAll(){

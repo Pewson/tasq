@@ -1,14 +1,17 @@
 package pl.sdacademy.tasq.question;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.annotations.GenericGenerator;
+import pl.sdacademy.tasq.Serializers.AnswerListSerializer;
 import pl.sdacademy.tasq.answer.Answer;
 import pl.sdacademy.tasq.test.Test;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
-@Entity(name="Question")
-@Table(name="question")
+@Entity(name = "Question")
+@Table(name = "question")
 public class Question {
 
     @Id
@@ -19,17 +22,17 @@ public class Question {
     )
     private String id;
 
-    @ManyToOne(fetch=FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     //@JoinColumn(name = "id")
     private Test test;
 
-    @Column(name="text")
+    @Column(name = "text")
     private String text;
 
-    @Column(name="points")
+    @Column(name = "points")
     private Integer points;
-
-    @OneToMany(fetch=FetchType.LAZY)
+    @JsonSerialize(using = AnswerListSerializer.class)
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Answer> listOfAnswers;
     //private answer answer;
 
@@ -64,7 +67,6 @@ public class Question {
     public void setPoints(Integer points) {
         this.points = points;
     }
-
     public List<Answer> getListOfAnswers() {
         return listOfAnswers;
     }

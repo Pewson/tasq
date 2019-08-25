@@ -1,7 +1,9 @@
 package pl.sdacademy.tasq.test;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.hibernate.annotations.GenericGenerator;
 import pl.sdacademy.tasq.DocType;
+import pl.sdacademy.tasq.serializers.QuestionListSerializer;
 import pl.sdacademy.tasq.author.Author;
 import pl.sdacademy.tasq.question.Question;
 
@@ -25,9 +27,9 @@ public class Test {
     @ManyToOne(fetch=FetchType.EAGER)
     private Author author;
 
+    @JsonSerialize(using = QuestionListSerializer.class)
     @OneToMany(fetch=FetchType.EAGER)
     private List<Question> questions;
-
     @Enumerated(EnumType.STRING)
     @Column(name="type")
     private DocType type;
